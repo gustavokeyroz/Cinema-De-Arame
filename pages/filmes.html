@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cinema de Arame</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>Cinema de Arame</h1>
-        </div>
 
         <div class="nav">
+            <div>
+                <img src="../images/logo.jpeg" class="logo">
+            </div>
+
             <a href="../index.html">Home</a>
             <a href="./filmes.html">Filmes</a>
-            <a href="#">Sessões</a>
+            <a href="./sessao.html">Sessões</a>
             <a href="#">Reserva</a>
         </div>
 
-        
+
     </header>
 
     <main>
-        
+        <div class="filtro">
+            <div class="categoria">
+                <h2>Categorias</h2>
+                <button onclick="Todos()">Todos</button>
+                <button onclick="Terror()">Terror</button>
+                <button onclick="Comedia()">Comédia</button>
+                <button onclick="Fantasia()">Fantasia</button>
+                <button onclick="Aventura()">Aventura</button>
+                <button onclick="Ficcao()">Ficção Científica</button>
+            </div>
+
+            <div class="pesquisa">
+                <h2>Pesquisa</h2>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="verFilmes">
+          <img src="../images/cartaz/odisseia.jpeg" class="aventura">
+          <img src="../images/cartaz/odisseia.jpeg" class="terror">
+          <img src="../images/cartaz/odisseia.jpeg" class="terror">
+          <img src="../images/cartaz/odisseia.jpeg" class="fantasia">
+        </div>
     </main>
 
     <footer>
 
     </footer>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>
