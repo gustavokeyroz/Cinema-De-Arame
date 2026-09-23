@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1A0508;
+  gap: 20px;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo{
+  height: 100.5px;
+  width: 150px;
+}
+
+
+h1, h2, a, button{
+  color: #efe6d8;
+}
+main {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+
+    & .link-nav{
+      position: relative;
+      text-decoration: none;
+      font-size: 2.5vh;
+      transition: 0.5s;
+    }
+
+    & .link-nav::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #efe6d8;
+      transition: width 0.3s ease;
+    }
+
+    & .link-nav:hover::after{
+      width: 100%;
+    }
+}
+
+.destaque {
+  height: 50vh;
+  width: 80%;
+  border-radius: 10px;
+  border: 2px solid #ff8f82;
+}
+
+.em-cartaz {
+  height: 48vh;
+  width: 80%;
+  border-radius: 10px;
+  border: 2px solid #ff8f82;
+}
+
+.em-breve {
+  height: 48vh;
+  width: 80%;
+  border-radius: 10px;
+  border: 2px solid #ff8f82;
+}
+
+.filtro{
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+button{
+  background-color: #310003;
+}
+
+.verFilmes{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+  align-self: center;
+
+
+    & img{
+      width: 273.5px;
+      height: 400px;
+  }
+
+}

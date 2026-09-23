@@ -1,0 +1,128 @@
+/* =====================================================================
+   ADICIONADO — Página de sessões (pages/sessao.html)
+   Reaproveita .slot-midia, .horario/.horario--ativo (da página do
+   filme) e .dia-nome/.dia-data (também da página do filme).
+===================================================================== */
+
+/* ficha do filme (mais estreita) + tabela de horários (mais larga) */
+.sessao-grade {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.sessao-poster {
+  border-radius: 0.625rem;
+  border: 0.125rem solid #ff8f82;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 1rem;
+}
+
+.sessao-poster .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.sessao-poster .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sessao-titulo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.sessao-sala {
+  color: #8a7570;
+  font-size: 0.8125rem;
+}
+
+.slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+/* 1 coluna por dia da semana */
+.dias-colunas {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dia-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dia-coluna-cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  padding-bottom: 0.625rem;
+  margin-bottom: 0.125rem;
+  border-bottom: 0.0625rem solid #3a1216;
+  color: #cbb8ae;
+}
+
+/* dentro da coluna, os botões de horário empilham e ocupam a
+   largura toda (por padrão .horario só definia o "visual" do botão,
+   não como ele se comporta dentro de um pai flex) */
+.dia-coluna .horario {
+  width: 100%;
+  text-align: center;
+}
+
+.dia-nome {
+  font-weight: 700;
+}
+
+
+.horario {
+  background: #2a0a0d;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.5rem;
+  color: #efe6d8;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 0.625rem 1.125rem;
+  cursor: pointer;
+}
+
+.horario--ativo {
+  background: #ff8f82;
+  border-color: #ff8f82;
+  color: #1a0508;
+}
+
+.comprar-ingresso {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.875rem 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.comprar-ingresso[disabled] {
+  background: #2a0a0d;
+  color: #8a7570;
+  cursor: not-allowed;
+}
+
+@media (max-width: 56em) {
+  .sessao-grade { grid-template-columns: 1fr; }
+  .sessao-poster { max-width: 12rem; }
+  .dias-colunas { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 34em) {
+  .dias-colunas { grid-template-columns: repeat(2, 1fr); }
+}

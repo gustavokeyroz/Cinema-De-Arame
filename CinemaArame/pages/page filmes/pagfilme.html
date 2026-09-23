@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Filme</title>
+    <link rel="stylesheet" href="pgflme.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+          <div class="nav">
+              <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+              </div>
+
+              <a href="../index.html" class="link-nav">Home</a>
+              <a href="./filmes.html" class="link-nav">Filmes</a>
+              <a href="./sessao.html" class="link-nav">Sessões</a>
+              <a href="./snacks.html" class="link-nav">Snacks</a>
+            </div>
+    </header>
+     <main>
+      <section class="secao pagina-filme">
+        <div class="pagina">
+
+          <!-- título + meta ficam acima das duas colunas, valendo pra página toda -->
+          <h1 class="filme-titulo">Título do filme</h1>
+          <p class="filme-meta">Gênero · duração · <span class="selo-classificacao selo-classificacao--inline">14</span></p>
+
+          <div class="filme-grade">
+
+            <!-- ===================== COLUNA ESQUERDA ===================== -->
+            <div class="filme-coluna filme-coluna--poster">
+
+              <!-- Pra trocar o pôster, insira um <img> dentro do .slot-midia -->
+              <div class="filme-poster">
+                <div class="slot-midia" data-numero="01"></div>
+              </div>
+
+              <p class="filme-sinopse">
+                Texto da sinopse do filme. Substitua por um resumo curto da
+                história, sem revelar o final.
+              </p>
+
+              <dl class="filme-ficha">
+                <div class="filme-ficha-item">
+                  <dt>Data de estreia</dt>
+                  <dd>00/00/0000</dd>
+                </div>
+                <div class="filme-ficha-item">
+                  <dt>Distribuído por</dt>
+                  <dd>Nome da distribuidora</dd>
+                </div>
+                <div class="filme-ficha-item">
+                  <dt>Acessibilidade</dt>
+                  <dd>Descrição dos recursos disponíveis (audiodescrição, legenda descritiva etc.).</dd>
+                </div>
+              </dl>
+
+              </div>
+            </div>
+
+            <!-- COLUNA DIREITA  -->
+            <div class="filme-coluna filme-coluna--horarios">
+              <h2 class="horarios-titulo">Horários</h2>
+
+              
+              <div class="dias" data-dias>
+                <button class="dia dia--ativa" type="button" data-dia-alvo="seg">
+                  <span class="dia-nome">Segunda</span>
+                  <span class="dia-data">21/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="ter">
+                  <span class="dia-nome">Terça</span>
+                  <span class="dia-data">22/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="qua">
+                  <span class="dia-nome">Quarta</span>
+                  <span class="dia-data">23/set</span>
+                </button>
+              </div>
+
+              
+              <div class="filme-selects">
+                <select class="filme-select" data-filtro-tipo>
+                  <option value="todos">Tipo de sessão</option>
+                  <option value="2d">2D</option>
+                  <option value="3d">3D</option>
+                  <option value="dbox">D-BOX</option>
+                </select>
+                <select class="filme-select" data-filtro-idioma>
+                  <option value="todos">Idioma</option>
+                  <option value="dublado">Dublado</option>
+                  <option value="legendado">Legendado</option>
+                  <option value="original">Áudio original</option>
+                </select>
+              </div>
+
+              <!-- SEGUNDA  -->
+              <div class="horarios-dia" data-horarios-dia="seg">
+                <div class="cinema-bloco">
+                  <h3 class="cinema-nome">Nome do cinema 1</h3>
+                  <p class="cinema-sala">2D · Dublado · Sala 3</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">18h30</button>
+                    <button class="horario" type="button" data-tipo="3d" data-idioma="legendado">21h45</button>
+                  </div>
+                </div>
+
+                <div class="cinema-bloco">
+                  <h3 class="cinema-nome">Nome do cinema 2</h3>
+                  <p class="cinema-sala">D-BOX · Dublado · Sala 5</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="legendado">14h05</button>
+                    <button class="horario" type="button" data-tipo="dbox" data-idioma="dublado">21h20</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TERÇA -->
+              <div class="horarios-dia" data-horarios-dia="ter" hidden>
+                <div class="cinema-bloco">
+                  <h3 class="cinema-nome">Nome do cinema 1</h3>
+                  <p class="cinema-sala">2D · Legendado · Sala 2</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="legendado">15h30</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">19h00</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- QUARTA -->
+              <div class="horarios-dia" data-horarios-dia="qua" hidden>
+                <div class="cinema-bloco">
+                  <h3 class="cinema-nome">Nome do cinema 2</h3>
+                  <p class="cinema-sala">3D · Áudio original · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="3d" data-idioma="original">17h15</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">20h30</button>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              <div class="legenda-grade">
+                <div class="legenda-coluna">
+                  <h4>Salas</h4>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">2D</span>
+                    <p>Formato tradicional de exibição.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">3D</span>
+                    <p>Imagem com efeito de profundidade.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">DBX</span>
+                    <p>Poltronas com movimento.</p>
+                  </div>
+                </div>
+                <div class="legenda-coluna">
+                  <h4>Idiomas</h4>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">DUB</span>
+                    <p>Áudio dublado em português.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">LEG</span>
+                    <p>Áudio original com legendas.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">OR</span>
+                    <p>Áudio original, sem legendas.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+</body>
+</html>

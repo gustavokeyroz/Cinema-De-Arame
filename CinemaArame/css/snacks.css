@@ -1,0 +1,128 @@
+.snacks-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.snacks-titulo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.snacks-link {
+  color: #ff8f82;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.snacks-link:hover {
+  border-color: #ff8f82;
+}
+
+/* banners  */
+
+.banners-grade {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.banner-slot {
+  border-radius: 0.625rem;
+  border: 0.125rem solid #ff8f82;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.banner-slot .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slot .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+.grade-snacks {
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.snack-cartao {
+  position: relative;
+  background: #150406;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.625rem;
+  padding: 0.75rem;
+}
+
+.snack-cartao .slot-midia {
+  border-radius: 0.375rem;
+  overflow: hidden;
+  aspect-ratio: 2 / 2;
+  margin-bottom: 0.75rem;
+}
+
+.snack-cartao .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snack-nome {
+  color: #efe6d8;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+}
+
+.snack-preco {
+  color: #ff8f82;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+
+.snack-adicionar {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  padding: 0 0.5rem;
+  border-radius: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 800;
+  color: #efe6d8;
+}
+
+.snack-adicionar-qtd {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 64em) {
+  .grade-snacks { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 40em) {
+  .banners-grade { grid-template-columns: repeat(2, 1fr); }
+  .grade-snacks { grid-template-columns: repeat(2, 1fr); }
+  .snacks-topo { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}

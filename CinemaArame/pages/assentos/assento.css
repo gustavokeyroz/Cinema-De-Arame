@@ -1,0 +1,101 @@
+.resumo-compra {
+  background: #150406;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.resumo-compra h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+}
+
+.resumo-bloco {
+  padding: 0.875rem 0;
+  border-top: 0.0625rem solid #3a1216;
+}
+
+.resumo-rotulo {
+  color: #8a7570;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.resumo-filme {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.resumo-poster {
+  width: 3rem;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.resumo-poster .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.resumo-filme-titulo {
+  color: #efe6d8;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.resumo-filme-formato {
+  color: #8a7570;
+  font-size: 0.75rem;
+}
+
+.resumo-sessao {
+  color: #cbb8ae;
+  font-size: 0.8125rem;
+}
+
+.resumo-assentos {
+  color: #efe6d8;
+  font-size: 0.875rem;
+}
+
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 0.0625rem solid #3a1216;
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.resumo-continuar {
+  width: 100%;
+  padding: 0.875rem 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.resumo-continuar[disabled] {
+  background: #2a0a0d;
+  color: #8a7570;
+  cursor: not-allowed;
+}
+
+@media (max-width: 56em) {
+  .assentos-grade { grid-template-columns: 1fr; }
+  .resumo-compra { position: static; }
+  .legenda-grade--assentos { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 30em) {
+  .fileira { gap: 0.625rem; }
+  .assento { width: 1.5rem; height: 1.5rem; }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/filmes.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+
+        <div class="nav">
+            <div>
+                  <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+            <a href="./sessao.html" class="link-nav">Sessões</a>
+            <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+
+
+    </header>
+
+  <main>
+      <section class="secao pagina-filmes">
+        <div class="pagina">
+          
+          <div class="abas" data-abas>
+            <button class="aba aba--ativa" type="button" data-aba-alvo="em-cartaz">Em cartaz</button>
+            <button class="aba" type="button" data-aba-alvo="pre-venda">Pré-venda</button>
+            <button class="aba" type="button" data-aba-alvo="em-breve">Em breve</button>
+          </div>
+
+          <!-- FILTROS -->
+          <div class="filtro">
+            <div class="chips" data-generos>
+              <button class="chip chip--ativo" type="button" data-genero="todos">Todos</button>
+              <button class="chip" type="button" data-genero="terror">Terror</button>
+              <button class="chip" type="button" data-genero="comedia">Comédia</button>
+              <button class="chip" type="button" data-genero="acao">Ação</button>
+              <button class="chip" type="button" data-genero="drama">Drama</button>
+              <button class="chip" type="button" data-genero="aventura">Aventura</button>
+              <button class="chip" type="button" data-genero="animacao">Animação</button>
+            </div>
+
+            <div class="busca">
+              <input type="search" placeholder="Pesquisar filme" data-busca>
+            </div>
+          </div>
+
+          <!--EM CARTAZ  -->
+          <ul class="grade-filmes" data-grade="em-cartaz">
+        
+            <li class="cartao-poster" data-genero="terror" data-titulo="Título do filme 1">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">18</span>
+              <div class="slot-midia" data-numero="01">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 1</h3>
+                <p class="cartao-meta">Terror · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="comedia" data-titulo="Título do filme 2">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">12</span>
+              <div class="slot-midia" data-numero="02">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 2</h3>
+                <p class="cartao-meta">Comédia · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="comedia" data-titulo="Título do filme 3">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">12</span>
+              <div class="slot-midia" data-numero="03">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 3</h3>
+                <p class="cartao-meta">Comédia · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="acao" data-titulo="Título do filme 4">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">12</span>
+              <div class="slot-midia" data-numero="04">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 4</h3>
+                <p class="cartao-meta">Ação · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="drama" data-titulo="Título do filme 5">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">16</span>
+              <div class="slot-midia" data-numero="05">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 5</h3>
+                <p class="cartao-meta">Drama · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="acao" data-titulo="Título do filme 6">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">14</span>
+              <div class="slot-midia" data-numero="06">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 6</h3>
+                <p class="cartao-meta">Ação · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="animacao" data-titulo="Título do filme 7">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">L</span>
+              <div class="slot-midia" data-numero="07">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 7</h3>
+                <p class="cartao-meta">Animação · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="animacao" data-titulo="Título do filme 8">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">L</span>
+              <div class="slot-midia" data-numero="08">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 8</h3>
+                <p class="cartao-meta">Animação · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="aventura" data-titulo="Título do filme 9">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">10</span>
+              <div class="slot-midia" data-numero="09">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 9</h3>
+                <p class="cartao-meta">Aventura · duração</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="drama" data-titulo="Título do filme 10">
+              <span class="selo-assista">Assista agora</span>
+              <span class="selo-classificacao">16</span>
+              <div class="slot-midia" data-numero="10">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Título do filme 10</h3>
+                <p class="cartao-meta">Drama · duração</p>
+              </div>
+            </li>
+          </ul>
+
+          <!--  PRÉ-VENDA-->
+          <ul class="grade-filmes" data-grade="pre-venda" hidden>
+            <li class="cartao-poster" data-genero="acao" data-titulo="Pré-venda 1">
+              <span class="selo-classificacao">14</span>
+              <div class="slot-midia" data-numero="01">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Pré-venda 1</h3>
+                <p class="cartao-meta">Ação · estreia em breve</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="animacao" data-titulo="Pré-venda 2">
+              <span class="selo-classificacao">L</span>
+              <div class="slot-midia" data-numero="02">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Pré-venda 2</h3>
+                <p class="cartao-meta">Animação · estreia em breve</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="terror" data-titulo="Pré-venda 3">
+              <span class="selo-classificacao">18</span>
+              <div class="slot-midia" data-numero="03">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Pré-venda 3</h3>
+                <p class="cartao-meta">Terror · estreia em breve</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="drama" data-titulo="Pré-venda 4">
+              <span class="selo-classificacao">14</span>
+              <div class="slot-midia" data-numero="04">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Pré-venda 4</h3>
+                <p class="cartao-meta">Drama · estreia em breve</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- EM BREVE -->
+          <ul class="grade-filmes" data-grade="em-breve" hidden>
+            <li class="cartao-poster" data-genero="comedia" data-titulo="Em breve 1">
+              <span class="selo-classificacao">12</span>
+              <div class="slot-midia" data-numero="01">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Em breve 1</h3>
+                <p class="cartao-meta">Comédia · data prevista</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="aventura" data-titulo="Em breve 2">
+              <span class="selo-classificacao">10</span>
+              <div class="slot-midia" data-numero="02">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Em breve 2</h3>
+                <p class="cartao-meta">Aventura · data prevista</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="acao" data-titulo="Em breve 3">
+              <span class="selo-classificacao">16</span>
+              <div class="slot-midia" data-numero="03">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Em breve 3</h3>
+                <p class="cartao-meta">Ação · data prevista</p>
+              </div>
+            </li>
+
+            <li class="cartao-poster" data-genero="terror" data-titulo="Em breve 4">
+              <span class="selo-classificacao">18</span>
+              <div class="slot-midia" data-numero="04">
+                <img src="" alt="">
+              </div>
+              <div class="cartao-info">
+                <h3>Em breve 4</h3>
+                <p class="cartao-meta">Terror · data prevista</p>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+
+   <script>
+      var abas = document.querySelectorAll('[data-abas] .aba');
+      var grades = document.querySelectorAll('[data-grade]');
+      var chips = document.querySelectorAll('[data-generos] .chip');
+      var campoBusca = document.querySelector('[data-busca]');
+
+      var generoAtivo = 'todos';
+
+      function gradeAtiva() {
+        return document.querySelector('[data-grade]:not([hidden])');
+      }
+
+      // Troca de aba: mostra a grade escolhida e esconde as outras
+      abas.forEach(function (aba) {
+        aba.addEventListener('click', function () {
+          abas.forEach(function (a) { a.classList.remove('aba--ativa'); });
+          aba.classList.add('aba--ativa');
+
+          var alvo = aba.getAttribute('data-aba-alvo');
+          grades.forEach(function (grade) {
+            grade.hidden = grade.getAttribute('data-grade') !== alvo;
+          });
+
+          aplicarFiltros();
+        });
+      });
+
+      // Filtro de gênero: só um chip ativo por vez
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('chip--ativo'); });
+          chip.classList.add('chip--ativo');
+          generoAtivo = chip.getAttribute('data-genero');
+          aplicarFiltros();
+        });
+      });
+
+      // Busca por texto: filtra a cada letra digitada
+      campoBusca.addEventListener('input', aplicarFiltros);
+
+      function aplicarFiltros() {
+        var texto = campoBusca.value.trim().toLowerCase();
+        var itens = gradeAtiva().querySelectorAll('.cartao-poster');
+
+        itens.forEach(function (item) {
+          var generoOk = generoAtivo === 'todos' || item.getAttribute('data-genero') === generoAtivo;
+          var titulo = item.getAttribute('data-titulo').toLowerCase();
+          var buscaOk = texto === '' || titulo.indexOf(texto) !== -1;
+
+          item.style.display = (generoOk && buscaOk) ? '' : 'none';
+        });
+      }
+    </script>
+</body>
+</html>
