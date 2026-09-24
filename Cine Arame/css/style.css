@@ -1,0 +1,1253 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1A0508;
+  /* ALTERADO: 20px -> 1.25rem (mesma lógica das outras páginas) */
+  gap: 1.25rem;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo{
+  /* ALTERADO: 100.5px -> 6.28125rem / 150px -> 9.375rem */
+  height: 6.28125rem;
+  width: 9.375rem;
+}
+
+
+h1, h2, a, button{
+  color: #efe6d8;
+}
+main {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+
+    & .link-nav{
+      position: relative;
+      text-decoration: none;
+      /* ALTERADO: 2.5vh (dependia da altura da tela) -> 1.125rem */
+      font-size: 1.125rem;
+      transition: 0.5s;
+    }
+
+    & .link-nav::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      /* ALTERADO: 2px -> 0.125rem */
+      height: 0.125rem;
+      background-color: #efe6d8;
+      transition: width 0.3s ease;
+    }
+
+    & .link-nav:hover::after{
+      width: 100%;
+    }
+}
+
+
+.filtro{
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+button{
+  background-color: #310003;
+}
+
+.verFilmes{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+  align-self: center;
+
+
+    & img{
+      width: 273.5px;
+      height: 400px;
+  }
+
+}
+
+
+
+/* Seções Destaques / Em Cartaz / Em Breve */
+
+.secao {
+  width: 100%;
+  padding: 2rem 0 0.75rem;
+}
+
+.pagina {
+  width: 100%;
+  max-width: 87.5rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.secao-cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 1.5rem 1.125rem;
+}
+
+.secao-titulo {
+  font-size: 2rem;
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 2rem;
+}
+
+/* barra ao lado título*/
+.secao-titulo::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 0.3rem;
+  background: #a9544a;
+  border-radius: 0.12rem;
+}
+
+/* Carrossel genérico */
+
+.carrossel {
+  position: relative;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.carrossel-trilho {
+  display: flex;
+  gap: 10rem;
+  list-style: none;
+  overflow-x: auto;
+  padding: 0.5 1.5rem 0.5rem;
+}
+
+.carrossel-trilho::-webkit-scrollbar {
+  display: none;
+}
+
+.carrossel-trilho > li {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+}
+
+/* "barrinha de baixo" */
+.carrossel-paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0 0.2rem;
+}
+
+.ponto {
+  width: 1.4rem;
+  height: 0.4rem;
+  border-radius: 0.2rem;
+  border: none;
+  background: #3a1216;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, width 0.25s ease;
+}
+
+.ponto:hover {
+  background: #ffb5ad;
+}
+
+.ponto--ativo {
+  width: 3rem;
+  background: #ff8173;
+}
+
+/* Destaques */
+
+.destaques .carrossel-trilho {
+  gap: 0;
+}
+
+.destaques .carrossel-trilho > li {
+  width: 100%;
+}
+
+.destaque-slot {
+  position: relative;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  aspect-ratio: 19 / 7;
+}
+
+.destaque-slot .slot-midia {
+  position: absolute;
+  inset: 0;
+}
+
+.destaque-slot .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* padrão de "quadro vazio" */
+.slot-midia {
+  background-image: repeating-linear-gradient(
+    135deg,
+    #5e0b19,
+    #510a15 0.875rem,
+    #de1a3a 0.875rem,
+    #9e1329 1.75rem
+  );
+}
+
+.destaque-legenda {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 2rem 1.125rem;
+  background: linear-gradient(0deg, rgba(26, 5, 8, 0.85) 0%, rgba(26, 5, 8, 0) 65%);
+}
+
+.destaque-tarja {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ff8f82;
+  background: #38070f;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.destaque-legenda h3 {
+  color: #efe6d8;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.destaque-legenda p {
+  color: #efe6d8;
+  font-size: 1rem;
+  max-width: 46ch;
+}
+
+/* Em Cartaz / Em Breve */
+
+.cartao-poster {
+  position: relative;
+  width: calc((100% - rem) / 4);
+}
+
+.cartao-poster .slot-midia {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 9 / 21;
+}
+
+.cartao-poster .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartao-info {
+  padding-top: 0.7rem;
+}
+
+.cartao-info h3 {
+  color: #efe6d8;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cartao-meta {
+  color: #cbb8ae;
+  font-size: 0.75rem;
+}
+
+/* selo de classificação indicativa */
+.selo-classificacao {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.3rem;
+  border-radius: 0.3125rem;
+  background: rgba(26, 5, 8, 0.85);
+  border: 0.06rem solid #000000;
+  color: #efe6d8;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* fita diagonal de "Pré-venda"*/
+.fita-pre-venda {
+  position: absolute;
+  top: 0.875rem;
+  left: -2.125rem;
+  z-index: 1;
+  width: 8.125rem;
+  transform: rotate(-45deg);
+  background: #310003;
+  color: #efe6d8;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 0.1875rem 0;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Página Filmes  */
+
+.pagina-filmes .pagina {
+  padding-top: 1rem;
+}
+
+/* abas */
+
+.abas {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 0.07rem solid #3a1216;
+  margin-bottom: 1rem;
+}
+
+.aba {
+  background: none;
+  border: none;
+  color: #c9a2a2;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0 0 0.75rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.aba--ativa {
+  color: #ffffff;
+}
+
+/* traço embaixo da aba ativa*/
+.aba--ativa::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.07rem;
+  height: 0.1rem;
+  background: #ff4935;
+}
+
+/* filtros*/
+
+.filtro {
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.chip {
+  background: #330d11da;
+  border: 0.0625rem solid #270206;
+  color: #eee4df;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.chip:hover {
+  background: #6e1a23;
+}
+
+.chip--ativo {
+  background: #ff6352;
+  border-color: #ff5f4e;
+  color: #000000;
+}
+
+.busca {
+  margin-left: auto;
+}
+
+.busca input {
+  width: 19rem;
+  max-width: 100%;
+  background: #2a0a0d;
+  border: 0.07rem solid #3a1216;
+  border-radius: 0.5rem;
+  color: #efe6d8;
+  font-size: 0.9em;
+  padding: 0.7rem 1rem;
+}
+
+.busca input::placeholder {
+  color: #c5b1ac;
+}
+
+.busca input:focus {
+  outline: 0.1rem solid #ff8f82;
+  outline-offset: 0.1rem;
+}
+
+/*  grade de pôsteres */
+
+.grade-filmes {
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.grade-filmes .cartao-poster {
+  width: 100%;
+}
+
+.grade-filmes[hidden] {
+  display: none;
+}
+
+/* etiqueta "Assista agora"*/
+.selo-assista {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1;
+  background: rgba(71, 9, 18, 0.85);
+  border: 0.0625rem solid #000000;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+@media (max-width: 40em) {
+  .grade-filmes { grid-template-columns: repeat(2, 1fr); }
+  .busca { margin-left: 0; width: 100%; }
+  .busca input { width: 100%; }
+}
+
+
+
+/* Página de sessões */
+
+/* ficha do filme (mais estreita) + tabela de horários (mais larga) */
+.sessao-grade {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.sessao-poster {
+  border-radius: 0.625rem;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 1rem;
+}
+
+.sessao-poster .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.sessao-poster .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sessao-titulo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.sessao-sala {
+  color: #8a7570;
+  font-size: 0.9rem;
+}
+
+/* coluna por dia da semana */
+.dias-colunas {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.dia-coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dia-coluna-cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.1rem;
+  border-bottom: 0.06rem solid #3a1216;
+  color: #ffffff;
+}
+
+.dia-coluna .horario {
+  width: 100%;
+  text-align: center;
+}
+
+.comprar-ingresso {
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.875rem 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.comprar-ingresso[disabled] {
+  background: #2a0a0d;
+  color: #8a7570;
+  cursor: not-allowed;
+}
+
+@media (max-width: 56em) {
+  .sessao-grade { grid-template-columns: 1fr; }
+  .sessao-poster { max-width: 12rem; }
+  .dias-colunas { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 34em) {
+  .dias-colunas { grid-template-columns: repeat(2, 1fr); }
+}
+
+
+
+/* =====================================================================
+   ADICIONADO — Página de snacks (pages/snacks.html)
+===================================================================== */
+
+.snacks-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.snacks-titulo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/*  banners  */
+
+.banners-grade {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.banner-slot {
+  border-radius: 0.6rem;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.banner-slot .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-slot .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* cabeçalho "Destaques" */
+
+.secao-cabecalho--snacks {
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+
+
+/*  grade de combos */
+
+.grade-snacks {
+  width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+.snack-cartao {
+  position: relative;
+  background: #150406;
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+}
+
+.snack-cartao .slot-midia {
+  border-radius: 0.3rem;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.75rem;
+}
+
+.snack-cartao .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snack-nome {
+  color: #faf8f4;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.snack-preco {
+  color: #f77104;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+@media (max-width: 64em) {
+  .grade-snacks { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 40em) {
+  .banners-grade { grid-template-columns: repeat(2, 1fr); }
+  .grade-snacks { grid-template-columns: repeat(2, 1fr); }
+  .snacks-topo { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
+
+
+
+/* Página do filme individual*/
+
+.filme-titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.375rem;
+}
+
+.filme-meta {
+  color: #cbb8ae;
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selo-classificacao--inline {
+  position: static;
+}
+
+/*colunas: pôster+ficha e horários */
+
+.filme-grade {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.filme-poster {
+  border-radius: 0.625rem;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 1rem;
+}
+
+.filme-poster .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.filme-poster .slot-midia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filme-sinopse {
+  color: #cbb8ae;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.filme-ficha {
+  border-top: 0.0625rem solid #3a1216;
+}
+
+.filme-ficha-item {
+  padding: 0.875rem 0;
+  border-bottom: 0.0625rem solid #3a1216;
+}
+
+.filme-ficha-item dt{
+  color: #8a7570;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.filme-ficha-item dd {
+  color: #efe6d8;
+  font-size: 1rem;
+}
+
+/* ---- coluna de horários ---- */
+
+.horarios-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.dias {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  background: #2a0a0d;
+  border: 0.0625rem solid #4b161b;
+  border-radius: 0.75rem;
+  color: #ffe9de;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+}
+
+.dia--ativa {
+  background: #ff8f82;
+  border-color: #ff8f82;
+  color: #1a0508;
+}
+
+.dia-nome {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.dia-data {
+  font-size: 0.8rem;
+}
+
+.filme-selects {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filme-select {
+  background: #2a0a0d;
+  border: 0.025rem solid #3a1216;
+  border-radius: 0.5rem;
+  color: #ffeed2;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.cinema-bloco {
+  padding: 1rem 0;
+  border-top: 0.06rem solid #3a1216;
+}
+
+
+.cinema-sala {
+  color: #99837e;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.horarios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.horario {
+  background: #2a0a0d;
+  border: 0.06rem solid #3a1216;
+  border-radius: 0.5rem;
+  color: #efe6d8;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.6rem 1.125rem;
+  cursor: pointer;
+}
+
+.horario:hover {
+  border-color: #ff8f82;
+}
+
+.horario--ativo {
+  background: #ff8f82;
+  border-color: #ff8f82;
+  color: #1a0508;
+}
+
+/* ---- legenda de salas/idiomas ---- */
+
+.legenda-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 0.06rem solid #3a1216;
+}
+
+.legenda-coluna h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a7570;
+  margin-bottom: 0.75rem;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.legenda-icone {
+  flex: 0 0 auto;
+  min-width: 2.25rem;
+  text-align: center;
+  background: #2a0a0d;
+  border: 0.06rem solid #3a1216;
+  border-radius: 0.3rem;
+  color: #efe6d8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.5rem 0.3rem;
+}
+
+.legenda-item p {
+  color: #ebd7cd;
+  font-size: 1rem;
+}
+
+@media (max-width: 48em) {
+  .filme-poster { max-width: 20rem; }
+  .legenda-grade { grid-template-columns: 1fr; }
+}
+
+
+
+/* Página de assentos */
+
+.assentos-titulo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- resumo da compra ---- */
+
+.resumo-compra {
+  background: #150406;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  position: sticky;
+  top: 1.5rem;
+}
+
+.resumo-compra h2 {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.resumo-bloco {
+  padding: 0.9rem 0;
+  border-top: 0.06rem solid #3a1216;
+}
+
+.resumo-rotulo {
+  color: #8a7570;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.resumo-filme {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.resumo-poster {
+  width: 3rem;
+  aspect-ratio: 2 / 3;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+.resumo-poster .slot-midia {
+  width: 100%;
+  height: 100%;
+}
+
+.resumo-filme-titulo {
+  color: #efe6d8;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.resumo-filme-formato {
+  color: #8a7570;
+  font-size: 0.75rem;
+}
+
+.resumo-sessao {
+  color: #cbb8ae;
+  font-size: 0.8rem;
+}
+
+.resumo-assentos {
+  color: #efe6d8;
+  font-size: 0.9rem;
+}
+
+.resumo-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 0.0625rem solid #3a1216;
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.resumo-continuar {
+  width: 100%;
+  padding: 0.9rem 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #efe6d8;
+  cursor: pointer;
+  border: none;
+}
+
+.resumo-continuar:hover{
+  background-color:#420000;
+}
+
+@media (max-width: 56em) {
+  .assentos-grade { grid-template-columns: 1fr; }
+  .resumo-compra { position: static; }
+  .legenda-grade--assentos { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 30em) {
+  .fileira { gap: 0.625rem; }
+  .assento { width: 1.5rem; height: 1.5rem; }
+}
+
+
+/* Formulário de compra*/
+
+.formulario-compra {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.campo {
+  border: 0.0625rem solid #3a1216;
+  background: #150406;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.campo legend {
+  color: #8a7570;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.filme-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #0d0203;
+  border: 0.0625rem solid #3a1216;
+  border-radius: 0.5rem;
+  color: #efe6d8;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.filme-select:focus {
+  border-color: #8a7570;
+}
+
+/* --- Mapa de Assentos --- */
+.mapa-assentos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.fileira {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fileira-letra {
+  width: 1.5rem;
+  font-weight: 700;
+  color: #8a7570;
+  text-align: center;
+}
+
+.fileira-poltronas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.assento {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.35rem;
+  border: 0.0625rem solid #3a1216;
+  background: #23080b;
+  color: #cbb8ae;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.assento:hover:not([disabled]) {
+  background: #420000;
+  color: #efe6d8;
+  border-color: #631219;
+}
+
+.assento--selecionado {
+  background: #a31d24;
+  color: #ffffff;
+  border-color: #e63946;
+}
+
+.assento--indisponivel,
+.assento[disabled] {
+  background: #140809;
+  color: #3a1216;
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+.campo-erro {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+
+.ingressos-lista {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ingressos-vazio {
+  color: #8a7570;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.ingresso-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0d0203;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #3a1216;
+}
+
+.ingresso-codigo {
+  font-weight: 700;
+  color: #efe6d8;
+}
+
+.ingresso-item label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #cbb8ae;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.snacks-opcoes,
+.pagamento-opcoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.snack-opcao,
+.pagamento-opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #0d0203;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid #3a1216;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #cbb8ae;
+  transition: border-color 0.2s ease;
+}
+
+.snack-opcao:hover,
+.pagamento-opcao:hover {
+  border-color: #631219;
+  color: #efe6d8;
+}
+
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #a31d24;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+
+.comprar-ingresso {
+  width: 100%;
+  padding: 0.9rem 0;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: #efe6d8;
+  background-color: #631219;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.comprar-ingresso:hover {
+  background-color: #821922;
+}
+
+
+
+@media (max-width: 30em) {
+  .snacks-opcoes,
+  .pagamento-opcoes {
+    grid-template-columns: 1fr;
+  }
+}

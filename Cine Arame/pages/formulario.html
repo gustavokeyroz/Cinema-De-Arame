@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar ingresso — Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+          <div class="nav">
+              <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+              </div>
+
+              <a href="../index.html" class="link-nav">Home</a>
+              <a href="./filmes.html" class="link-nav">Filmes</a>
+              <a href="./sessao.html" class="link-nav">Sessões</a>
+              <a href="./snacks.html" class="link-nav">Snacks</a>
+            </div>
+    </header>
+
+    <main>
+      <section class="secao pagina-compra">
+        <div class="pagina">
+
+          <h1 class="compra-titulo">Comprar ingresso</h1>
+          <div class="compra-envoltorio">
+
+          <!-- FORMULÁRIO -->
+          <form class="formulario-compra" data-formulario>
+
+            <!--  filme -->
+            <fieldset class="campo">
+              <legend>Filme</legend>
+              <select class="filme-select" name="filme" data-campo-filme required>
+                <option value="" disabled selected>Selecione o filme</option>
+                <option value="Título do filme 1">Título do filme 1</option>
+                <option value="Título do filme 2">Título do filme 2</option>
+                <option value="Título do filme 3">Título do filme 3</option>
+                <option value="Título do filme 4">Título do filme 4</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="campo">
+              <legend>Assentos</legend>
+              <div class="mapa-assentos mapa-assentos--compra" data-mapa-compra>
+                <div class="fileira">
+                  <span class="fileira-letra">A</span>
+                  <div class="fileira-poltronas">
+                    <button class="assento" type="button">1</button>
+                    <button class="assento" type="button">2</button>
+                    <button class="assento" type="button">3</button>
+                    <button class="assento assento--indisponivel" type="button" disabled>×</button>
+                    <button class="assento" type="button">5</button>
+                    <button class="assento" type="button">6</button>
+                    <button class="assento" type="button">7</button>
+                    <button class="assento" type="button">8</button>
+                  </div>
+                </div>
+                <div class="fileira">
+                  <span class="fileira-letra">B</span>
+                  <div class="fileira-poltronas">
+                    <button class="assento" type="button">1</button>
+                    <button class="assento" type="button">2</button>
+                    <button class="assento assento--indisponivel" type="button" disabled>×</button>
+                    <button class="assento" type="button">4</button>
+                    <button class="assento" type="button">5</button>
+                    <button class="assento" type="button">6</button>
+                    <button class="assento" type="button">7</button>
+                    <button class="assento" type="button">8</button>
+                  </div>
+                </div>
+              </div>
+              <p class="campo-erro" data-erro-assento hidden>Escolha pelo menos 1 assento.</p>
+            </fieldset>
+
+            <fieldset class="campo">
+              <legend>Tipo de cada ingresso</legend>
+              <div class="ingressos-lista" data-ingressos-lista>
+                <p class="ingressos-vazio" data-ingressos-vazio>Selecione os assentos acima primeiro.</p>
+              </div>
+            </fieldset>
+
+            <!--  snacks -->
+            <fieldset class="campo">
+              <legend>Snacks </legend>
+              <div class="snacks-opcoes">
+                <label class="snack-opcao">
+                  <input type="checkbox" data-snack data-preco="73.00">
+                  <span>Combo 1 — R$ 73,00</span>
+                </label>
+                <label class="snack-opcao">
+                  <input type="checkbox" data-snack data-preco="50.50">
+                  <span>Combo 2 — R$ 50,50</span>
+                </label>
+                <label class="snack-opcao">
+                  <input type="checkbox" data-snack data-preco="53.00">
+                  <span>Combo 3 — R$ 53,00</span>
+                </label>
+                <label class="snack-opcao">
+                  <input type="checkbox" data-snack data-preco="44.00">
+                  <span>Combo 4 — R$ 44,00</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!--forma de pagamento -->
+            <fieldset class="campo">
+              <legend>Forma de pagamento</legend>
+              <div class="pagamento-opcoes">
+                <label class="pagamento-opcao">
+                  <input type="radio" name="pagamento" value="credito" required>
+                  Cartão de crédito
+                </label>
+                <label class="pagamento-opcao">
+                  <input type="radio" name="pagamento" value="debito">
+                  Cartão de débito
+                </label>
+                <label class="pagamento-opcao">
+                  <input type="radio" name="pagamento" value="pix">
+                  Pix
+                </label>
+                <label class="pagamento-opcao">
+                  <input type="radio" name="pagamento" value="dinheiro">
+                  Dinheiro
+                </label>
+              </div>
+            </fieldset>
+
+           
+            <div class="resumo-total resumo-total--compra">
+              <span>Total</span>
+              <span data-total-compra>R$ 0,00</span>
+            </div>
+
+            <button class="comprar-ingresso" type="submit">Finalizar compra</button>
+          </form>
+
+          <!-- CONFIRMAÇÃO  -->
+          <div class="confirmacao-compra" data-confirmacao hidden>
+            <p class="confirmacao-selo">✓</p>
+            <h2>Ingresso comprado!</h2>
+            <p class="confirmacao-resumo" data-confirmacao-resumo></p>
+            <button class="comprar-ingresso" type="button" data-nova-compra>Fazer nova compra</button>
+          </div>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+            <footer >
+      </div>
+    </footer>
+
+    
+    <script>
+      var PRECO_INTEIRA = 32;
+      var PRECO_MEIA = 16;
+
+      var formulario = document.querySelector('[data-formulario]');
+      var mapaCompra = document.querySelector('[data-mapa-compra]');
+      var listaIngressos = document.querySelector('[data-ingressos-lista]');
+      var textoListaVazia = document.querySelector('[data-ingressos-vazio]');
+      var erroAssento = document.querySelector('[data-erro-assento]');
+      var textoTotal = document.querySelector('[data-total-compra]');
+      var confirmacao = document.querySelector('[data-confirmacao]');
+      var resumoConfirmacao = document.querySelector('[data-confirmacao-resumo]');
+      var botaoNovaCompra = document.querySelector('[data-nova-compra]');
+
+      // guarda o tipo escolhido 
+      var tiposPorAssento = {};
+
+      mapaCompra.querySelectorAll('.assento:not([disabled])').forEach(function (assento) {
+        assento.addEventListener('click', function () {
+          var fileira = assento.closest('.fileira').querySelector('.fileira-letra').textContent;
+          var codigo = fileira + assento.textContent.trim();
+
+          assento.classList.toggle('assento--selecionado');
+
+          if (assento.classList.contains('assento--selecionado')) {
+            tiposPorAssento[codigo] = 'inteira';
+          } else {
+            delete tiposPorAssento[codigo];
+          }
+
+          montarListaDeIngressos();
+          atualizarTotal();
+        });
+      });
+
+      function montarListaDeIngressos() {
+        listaIngressos.innerHTML = '';
+        var codigos = Object.keys(tiposPorAssento);
+
+        if (codigos.length === 0) {
+          listaIngressos.appendChild(textoListaVazia);
+          textoListaVazia.hidden = false;
+          return;
+        }
+
+        codigos.forEach(function (codigo) {
+          var linha = document.createElement('div');
+          linha.className = 'ingresso-item';
+          linha.innerHTML =
+            '<span class="ingresso-codigo">' + codigo + '</span>' +
+            '<label><input type="radio" name="tipo-' + codigo + '" value="inteira" checked> Inteira</label>' +
+            '<label><input type="radio" name="tipo-' + codigo + '" value="meia"> Meia</label>';
+
+          linha.querySelectorAll('input').forEach(function (radio) {
+            radio.addEventListener('change', function () {
+              tiposPorAssento[codigo] = radio.value;
+              atualizarTotal();
+            });
+          });
+
+          listaIngressos.appendChild(linha);
+        });
+      }
+
+      document.querySelectorAll('[data-snack]').forEach(function (checkbox) {
+        checkbox.addEventListener('change', atualizarTotal);
+      });
+
+      function atualizarTotal() {
+        var totalIngressos = Object.values(tiposPorAssento).reduce(function (soma, tipo) {
+          return soma + (tipo === 'meia' ? PRECO_MEIA : PRECO_INTEIRA);
+        }, 0);
+
+        var totalSnacks = 0;
+        document.querySelectorAll('[data-snack]:checked').forEach(function (checkbox) {
+          totalSnacks += Number(checkbox.getAttribute('data-preco'));
+        });
+
+        var total = totalIngressos + totalSnacks;
+        textoTotal.textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+        return total;
+      }
+
+      formulario.addEventListener('submit', function (evento) {
+        evento.preventDefault();
+
+        var assentosEscolhidos = Object.keys(tiposPorAssento);
+        if (assentosEscolhidos.length === 0) {
+          erroAssento.hidden = false;
+          return;
+        }
+        erroAssento.hidden = true;
+
+        var filme = formulario.querySelector('[data-campo-filme]').value;
+        var total = atualizarTotal();
+
+        resumoConfirmacao.textContent =
+          filme + ' · assento(s) ' + assentosEscolhidos.join(', ') +
+          ' · total R$ ' + total.toFixed(2).replace('.', ',');
+
+        formulario.hidden = true;
+        confirmacao.hidden = false;
+      });
+
+      botaoNovaCompra.addEventListener('click', function () {
+        // limpa os campos nativos do formulário 
+
+        // limpa o que o JS controla por conta própria
+        tiposPorAssento = {};
+        mapaCompra.querySelectorAll('.assento--selecionado').forEach(function (assento) {
+          assento.classList.remove('assento--selecionado');
+        });
+        montarListaDeIngressos();
+        atualizarTotal();
+
+        confirmacao.hidden = true;
+        formulario.hidden = false;
+      });
+    </script>
+
+</body>
+</html>

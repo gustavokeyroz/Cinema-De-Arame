@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+          <div class="nav">
+              <div> 
+                <a href="./index.html">
+                  <img src="./images/logo.jpeg" class="logo" >
+                </a>
+              </div>
+
+              <a href="./index.html" class="link-nav">Home</a>
+              <a href="./pages/filmes.html"class="link-nav">Filmes</a>
+              <a href="./pages/sessao.html" class="link-nav">Sessões</a>
+              <a href="./pages/snacks.html" class="link-nav">Snacks</a>
+            </div>
+
+    </header>
+
+    <main>
+            
+            <section class="secao destaques" aria-label="Destaques">
+              <div class="pagina">
+                <div class="secao-cabecalho">
+                  <h2 class="secao-titulo">Destaques</h2>
+                </div>
+              </div>
+
+              <div class="carrossel carrossel--destaque" data-carrossel data-auto="6000">
+                <ul class="carrossel-trilho" data-trilho>
+
+                  <li>
+                    <div class="destaque-slot" data-numero="01">
+                      <div class="slot-midia">
+                         <img src="" alt="">
+                      </div>
+                      <div class="destaque-legenda">
+                        <span class="destaque-tarja">Pré-venda</span>
+                        <h3>Título do destaque 1</h3>
+                        <p>sinopse, gênero ou data de estreia.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="destaque-slot" data-numero="02">
+                      <div class="slot-midia">
+                         <img src="" alt="">
+                      </div>
+                      <div class="destaque-legenda">
+                        <span class="destaque-tarja">Pré-venda</span>
+                        <h3>Título do destaque 2</h3>
+                        <p>sinopse, gênero ou data de estreia.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="destaque-slot" data-numero="03">
+                      <div class="slot-midia">
+                         <img src="" alt="">
+                      </div>
+                      <div class="destaque-legenda">
+                        <span class="destaque-tarja">Pré-venda</span>
+                        <h3>Título do destaque 3</h3>
+                        <p>sinopse, gênero ou data de estreia.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="destaque-slot" data-numero="04">
+                      <div class="slot-midia">
+                         <img src="" alt="">
+                      </div>
+                      <div class="destaque-legenda">
+                        <span class="destaque-tarja">Pré-venda</span>
+                        <h3>Título do destaque 4</h3>
+                        <p>sinopse, gênero ou data de estreia.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="destaque-slot" data-numero="05">
+                      <div class="slot-midia">
+                         <img src="" alt="">
+                      </div>
+                      <div class="destaque-legenda">
+                        <span class="destaque-tarja">Pré-venda</span>
+                        <h3>Título do destaque 5</h3>
+                        <p>sinopse, gênero ou data de estreia.</p>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+
+                <div class="carrossel-paginacao" data-paginacao aria-label="Selecionar destaque"></div>
+              </div>
+            </section>
+
+
+            <section class="secao cartaz" aria-label="Em cartaz">
+              <div class="pagina">
+                <div class="secao-cabecalho">
+                  <h2 class="secao-titulo">Em cartaz</h2>
+                </div>
+              </div>
+
+              <div class="carrossel carrossel--cartaz" data-carrossel>
+                <ul class="carrossel-trilho" data-trilho>
+                
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">12</span>
+                      <a href="./pages/pagfilme.html"><div class="slot-midia" data-numero="01">
+                         <img src="" alt="">
+                      </div>
+                    </a>
+                      <div class="cartao-info">
+                        <h3>Título do filme 1</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+                
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">14</span>
+                      <a href="./pages/pagfilme.html">
+                      <div class="slot-midia" data-numero="02">
+                         <img src="" alt=""></a>
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 2</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">12</span>
+                      <div class="slot-midia" data-numero="03">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 3</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">18</span>
+                      <div class="slot-midia" data-numero="04">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 4</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">L</span>
+                      <div class="slot-midia" data-numero="05">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 5</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">10</span>
+                      <div class="slot-midia" data-numero="06">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 6</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">12</span>
+                      <div class="slot-midia" data-numero="07">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 7</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">14</span>
+                      <div class="slot-midia" data-numero="08">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 8</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">16</span>
+                      <div class="slot-midia" data-numero="09">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 9</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="selo-assista">Assista agora</span>
+                      <span class="selo-classificacao">L</span>
+                      <div class="slot-midia" data-numero="10">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título do filme 10</h3>
+                        <p class="cartao-meta">Gênero · duração</p>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+
+                <div class="carrossel-paginacao" data-paginacao aria-label="Selecionar página de filmes em cartaz"></div>
+              </div>
+            </section>
+
+
+            <section class="secao em-breve" aria-label="Em breve">
+              <div class="pagina">
+                <div class="secao-cabecalho">
+                  <h2 class="secao-titulo">Em breve</h2>
+                </div>
+              </div>
+
+              <div class="carrossel carrossel--breve" data-carrossel>
+                <ul class="carrossel-trilho" data-trilho>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="01">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 1</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="02">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 2</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="03">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 3</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="04">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 4</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="05">
+                         <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 5</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="06"> 
+                        <img src="" alt="">
+                    </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 6</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="07">
+                        <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 7</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="cartao-poster">
+                      <span class="fita-pre-venda">Pré-venda</span>
+                      <div class="slot-midia" data-numero="08">
+                        <img src="" alt="">
+                      </div>
+                      <div class="cartao-info">
+                        <h3>Título em breve 8</h3>
+                        <p class="cartao-meta">Gênero · data prevista</p>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+
+                <div class="carrossel-paginacao" data-paginacao aria-label="Selecionar página de filmes em breve"></div>
+              </div>
+            </section>
+
+    </main>
+    <footer>
+
+    </footer>
+
+  <script>
+      function iniciarCarrossel(raiz) {
+        var trilho = raiz.querySelector('[data-trilho]');
+        var paginacao = raiz.querySelector('[data-paginacao]');
+        if (!trilho || !paginacao) return;
+
+        var paginaAtual = 0;
+        var totalPaginas = 1;
+        var idAutoplay = null;
+        var preferemMenosMovimento =
+          window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Calcula quantas "páginas" cabem no trilho 
+        function calcularPaginas() {
+          var largura = trilho.clientWidth || 1;
+          totalPaginas = Math.max(1, Math.round(trilho.scrollWidth / largura));
+          montarPontos();
+        }
+
+        function montarPontos() {
+          paginacao.innerHTML = '';
+          for (var i = 0; i < totalPaginas; i++) {
+            var ponto = document.createElement('button');
+            ponto.type = 'button';
+            ponto.className = 'ponto';
+            ponto.setAttribute('aria-label', 'Ir para a página ' + (i + 1) + ' de ' + totalPaginas);
+            (function (indice) {
+              ponto.addEventListener('click', function () {
+                irParaPagina(indice);
+              });
+            })(i);
+            paginacao.appendChild(ponto);
+          }
+          atualizarPontoAtivo();
+        }
+
+        function atualizarPontoAtivo() {
+          var pontos = paginacao.children;
+          for (var i = 0; i < pontos.length; i++) {
+            pontos[i].classList.toggle('ponto--ativo', i === paginaAtual);
+          }
+        }
+
+        function irParaPagina(indice) {
+          paginaAtual = Math.max(0, Math.min(indice, totalPaginas - 1));
+          trilho.scrollTo({
+            left: trilho.clientWidth * paginaAtual,
+            behavior: preferemMenosMovimento ? 'auto' : 'smooth'
+          });
+          atualizarPontoAtivo();
+        }
+
+        // Mantém os pontos sincronizados 
+        var quadroPendente = false;
+        trilho.addEventListener('scroll', function () {
+          if (quadroPendente) return;
+          quadroPendente = true;
+          requestAnimationFrame(function () {
+            paginaAtual = Math.round(trilho.scrollLeft / (trilho.clientWidth || 1));
+            atualizarPontoAtivo();
+            quadroPendente = false;
+          });
+        });
+
+        // Recalcula ao redimensionar a janela 
+        var temporizador = null;
+        window.addEventListener('resize', function () {
+          clearTimeout(temporizador);
+          temporizador = setTimeout(calcularPaginas, 200);
+        });
+
+        // Avanço automático 
+        var intervalo = Number(raiz.getAttribute('data-auto'));
+        if (intervalo && !preferemMenosMovimento) {
+          function ligarAutoplay() {
+            idAutoplay = setInterval(function () {
+              irParaPagina((paginaAtual + 1) % totalPaginas);
+            }, intervalo);
+          }
+          function desligarAutoplay() {
+            clearInterval(idAutoplay);
+          }
+          ligarAutoplay();
+          raiz.addEventListener('mouseenter', desligarAutoplay);
+          raiz.addEventListener('mouseleave', ligarAutoplay);
+          raiz.addEventListener('focusin', desligarAutoplay);
+          raiz.addEventListener('focusout', ligarAutoplay);
+        }
+
+        calcularPaginas();
+      }
+
+      document.querySelectorAll('[data-carrossel]').forEach(iniciarCarrossel);
+    </script>
+
+
+</body>
+</html>

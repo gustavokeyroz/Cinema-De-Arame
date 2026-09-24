@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <header>
+
+        <div class="nav">
+            <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+             <a href="./sessao.html" class="link-nav">Sessões</a>
+              <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+    </header>
+
+   <main>
+      <section class="secao pagina-filme">
+        <div class="pagina">
+
+          <h1 class="filme-titulo">Título do filme</h1>
+          <p class="filme-meta">Gênero · duração · <span class="selo-classificacao selo-classificacao--inline">14</span></p>
+
+          <div class="filme-grade">
+
+            <!-- COLUNA ESQUERDA  -->
+
+            <div class="filme-coluna filme-coluna--poster">
+
+              <div class="filme-poster">
+                <div class="slot-midia" data-numero="01">
+                    <img src="" alt="">
+                </div>
+              </div>
+
+              <p class="filme-sinopse">
+                Texto da sinopse do filme. Substitua por um resumo curto da
+                história, sem revelar o final.
+              </p>
+
+              <dl class="filme-ficha">
+                <div class="filme-ficha-item">
+                  <dt>Data de estreia</dt>
+                  <dd>00/00/0000</dd>
+                </div>
+                <div class="filme-ficha-item">
+                  <dt>Distribuído por</dt>
+                  <dd>Nome da distribuidora</dd>
+                </div>
+                <div class="filme-ficha-item">
+                  <dt>Acessibilidade</dt>
+                  <dd>Descrição dos recursos disponíveis (audiodescrição, legenda descritiva etc.).</dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- COLUNA DIREITA  -->
+
+               <div class="filme-coluna filme-coluna--horarios">
+              <h2 class="horarios-titulo">Horários</h2>
+
+              <div class="dias" data-dias>
+                <button class="dia dia--ativa" type="button" data-dia-alvo="qui">
+                  <span class="dia-nome">Quinta</span>
+                  <span class="dia-data">17/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="sex">
+                  <span class="dia-nome">Sexta</span>
+                  <span class="dia-data">18/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="sab">
+                  <span class="dia-nome">Sábado</span>
+                  <span class="dia-data">19/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="dom">
+                  <span class="dia-nome">Domingo</span>
+                  <span class="dia-data">20/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="seg">
+                  <span class="dia-nome">Segunda</span>
+                  <span class="dia-data">21/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="ter">
+                  <span class="dia-nome">Terça</span>
+                  <span class="dia-data">21/set</span>
+                </button>
+                <button class="dia" type="button" data-dia-alvo="qua">
+                  <span class="dia-nome">Quarta</span>
+                  <span class="dia-data">23/set</span>
+                </button>
+              </div>
+
+
+              <div class="horarios-dia" data-horarios-dia="qui" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">18h30</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="horarios-dia" data-horarios-dia="sex" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">17h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">19h30</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="horarios-dia" data-horarios-dia="sab" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">14h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h30</button>
+                    <button class="horario" type="button" data-tipo="3d" data-idioma="legendado">19h00</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="horarios-dia" data-horarios-dia="dom" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">14h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h30</button>
+                  </div>
+                </div>
+              </div>
+
+               <div class="horarios-dia" data-horarios-dia="seg" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">14h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h30</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="horarios-dia" data-horarios-dia="ter" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">14h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h30</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="horarios-dia" data-horarios-dia="qua" hidden>
+                <div class="cinema-bloco">
+                  <p class="cinema-sala">2D · Dublado · Sala 1</p>
+                  <div class="horarios-lista">
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">14h00</button>
+                    <button class="horario" type="button" data-tipo="2d" data-idioma="dublado">16h30</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="legenda-grade">
+                <div class="legenda-coluna">
+                  <h4>Salas</h4>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">2D</span>
+                    <p>Formato tradicional de exibição.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">3D</span>
+                    <p>Imagem com efeito de profundidade.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">DBX</span>
+                    <p>Poltronas com movimento.</p>
+                  </div>
+                </div>
+                <div class="legenda-coluna">
+                  <h4>Idiomas</h4>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">DUB</span>
+                    <p>Áudio dublado em português.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">LEG</span>
+                    <p>Áudio original com legendas.</p>
+                  </div>
+                  <div class="legenda-item">
+                    <span class="legenda-icone">OR</span>
+                    <p>Áudio original, sem legendas.</p>
+                  </div>
+                </div>
+              </div>
+          <a href="assentos.html">
+            <button class="resumo-continuar">Prosseguir</button>
+          </a>
+            </div>
+          </div>
+        </div>
+
+       
+      </section>
+    </main>
+
+<script>
+      var dias = document.querySelectorAll('[data-dias] .dia');
+      var blocosDeDia = document.querySelectorAll('[data-horarios-dia]');
+      var filtroTipo = document.querySelector('[data-filtro-tipo]');
+      var filtroIdioma = document.querySelector('[data-filtro-idioma]');
+ 
+      // Troca de dia
+      dias.forEach(function (dia) {
+        dia.addEventListener('click', function () {
+          dias.forEach(function (d) { d.classList.remove('dia--ativa'); });
+          dia.classList.add('dia--ativa');
+ 
+          var alvo = dia.getAttribute('data-dia-alvo');
+          blocosDeDia.forEach(function (bloco) {
+            bloco.hidden = bloco.getAttribute('data-horarios-dia') !== alvo;
+          });
+ 
+          aplicarFiltroDeSessao();
+        });
+      });
+ 
+      // Filtro de tipo de sessão + idioma
+      function aplicarFiltroDeSessao() {
+        var tipo = filtroTipo.value;
+        var idioma = filtroIdioma.value;
+        var blocoVisivel = document.querySelector('[data-horarios-dia]:not([hidden])');
+        if (!blocoVisivel) return;
+ 
+        var botoes = blocoVisivel.querySelectorAll('.horario');
+        botoes.forEach(function (botao) {
+          var tipoOk = tipo === 'todos' || botao.getAttribute('data-tipo') === tipo;
+          var idiomaOk = idioma === 'todos' || botao.getAttribute('data-idioma') === idioma;
+          botao.style.display = (tipoOk && idiomaOk) ? '' : 'none';
+        });
+      }
+ 
+      filtroTipo.addEventListener('change', aplicarFiltroDeSessao);
+      filtroIdioma.addEventListener('change', aplicarFiltroDeSessao);
+ 
+      // Seleção de horário
+      document.querySelectorAll('.horario').forEach(function (botao) {
+        botao.addEventListener('click', function () {
+          document.querySelectorAll('.horario--ativo').forEach(function (b) {
+            b.classList.remove('horario--ativo');
+          });
+          botao.classList.add('horario--ativo');
+        });
+      });
+    </script>
