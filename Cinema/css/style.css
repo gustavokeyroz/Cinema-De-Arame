@@ -1,0 +1,598 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #efe6d8;
+}
+
+/* global */
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1A0508;
+  overflow-x: hidden;
+  gap: 20px;
+}
+
+header {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo{
+  height: auto;
+  width: clamp(100px, 15vw, 150px);
+}
+
+main {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+    & .link-nav{
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      position: relative;
+      text-decoration: none;
+      transition: 0.5s;
+    }
+
+    & .link-nav::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #efe6d8;
+      transition: width 0.3s ease;
+    }
+
+    & .link-nav:hover::after{
+      width: 100%;
+    }
+}
+
+/* index.html */
+
+.destaque {
+  height: auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  & .container-slider-destaques {
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%; /* Corrigido de 90% para 100% para alinhar com o h2 */
+  }
+
+  & .container-destaques {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  & .slider {
+    width: 100%;
+
+    /* ESTILO DA IMAGEM DO BANNER DO FILME */
+    & img {
+      width: 100%;
+      height: auto; /* Define a altura do banner */
+      object-fit: cover; /* Recorta a imagem sem esticar */
+      display: block;
+      border-radius: 8px;
+    }
+  }
+
+  /* ESTILO DOS BOTÕES/SETAS DA ESQUERDA E DIREITA */
+  & .prev-button, 
+  & .next-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #efe6d8;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+
+    /* ESTILO DA IMAGEM DAS SETAS */
+    & img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  & .prev-button {
+    transform: rotate(180deg); /* Gira a seta para a esquerda */
+  }
+}
+
+
+.em-cartaz, .em-breve {
+  height: auto;
+  width: 90%; /* Ajusta para preencher melhor em telas menores */
+  max-width: 1200px; /* Limite em telas gigantes */
+  margin: 0 auto;
+
+  & .container-slider-filmes {
+    display: grid;
+    /* Cria 3 colunas: largura da seta, espaço do meio flexível (1fr), largura da seta */
+    grid-template-columns: 30px 1fr 30px; 
+    align-items: center;
+    gap: 0.5rem;
+
+    & .container-filmes {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      overflow-x: auto; /* Permite rolagem */
+      scroll-behavior: smooth; /* Rolagem suave nativa */
+      scrollbar-width: none; /* Esconde barra de rolagem no Firefox */
+      
+      &::-webkit-scrollbar {
+        display: none; /* Esconde barra de rolagem no Chrome/Safari */
+      }
+
+      & .slider-track {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        width: max-content;
+
+        & .slider {
+          /* 1. Para Mobile: diminui a divisão ou o desconto de espaço para os cards ficarem mais largos */
+          width: calc((100vw * 0.85) / 2);
+          /* 2. Para Desktop: Aumente o valor limite (ex: de 200px para 260px ou 280px) */
+          max-width: 240px;
+          /* 3. Para Telas Pequenas: Aumente a largura mínima (ex: de 130px para 160px) */
+          min-width: 160px;
+          flex-shrink: 0;
+
+          & img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+
+          & h2 {
+            font-size: 0.9rem;
+            color: #efe6d8;
+            white-space: nowrap;       /* 1. Impede que o texto quebre para a linha de baixo */
+            overflow: hidden;          /* 2. Esconde o texto que ultrapassar a largura do card */
+            text-overflow: ellipsis;   /* 3. Adiciona automaticamente as reticências (...) no final */
+            width: 100%;               /* Garante que o h2 respeite o tamanho do card */
+            display: block;            /* Certifica que o elemento se comporte como bloco */
+          }
+        }
+      }
+    }
+
+    & .prev-button, .next-button {
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: #efe6d8;
+      cursor: pointer;
+      flex-shrink: 0;
+      border-radius: 5px;
+    }
+
+    & .prev-button img, .next-button img {
+      width: 100%;
+      height: 100%;
+    }
+
+    & .prev-button {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+/* filmes.html */
+
+.filtro {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-self: flex-start;
+  max-width: 1200px;
+  margin-left: 10%;
+  flex-wrap: wrap;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #310003;
+}
+
+.verFilmes {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  align-self: center;
+
+    & figure {
+      /* 1. Para Mobile: diminui a divisão ou o desconto de espaço para os cards ficarem mais largos */
+      width: calc((100vw * 0.85) / 2);
+      /* 2. Para Desktop: Aumente o valor limite (ex: de 200px para 260px ou 280px) */
+      max-width: 240px;
+      /* 3. Para Telas Pequenas: Aumente a largura mínima (ex: de 130px para 160px) */
+      min-width: 160px;
+      flex-shrink: 0;
+      text-align: center;
+
+    & img {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+  }
+
+}
+
+
+
+}
+
+.container-sections{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  & img{
+      width: 250px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      object-position: center;
+      flex-shrink: 0;
+  }
+}
+
+
+/*
+assentos
+*/
+
+.container-seat{
+  perspective: 1000px;
+  margin: 0 auto 30px auto; /* Centraliza horizontalmente e dá margem inferior */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Alinha os 3 blocos lado a lado com espaço de corredor */
+.cinema-seats {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;             /* Garante que o container ocupa a largura disponível */
+  max-width: 600px;        /* Define um limite máximo para não esticar demais em ecrãs grandes */
+  gap: 6px; /* Corredores */
+  max-height: 480px;
+  min-height: 240px;
+  overflow-y: auto; /* Rolagem das fileiras */
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.seat{
+  background-color: #ffdbd7;
+  margin: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 32px;
+  max-width: 35px;
+  min-height: 16px;
+  min-width: 12px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.seat.selected {
+  background-color: #54120f;
+}
+
+.seat.occupied {
+  background-color: #441c17;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  list-style: none;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Garante que não passe da largura do container de assentos */
+}
+
+.showcase .seat {
+  margin: 0;                /* Remove os 10px de margem que desalinhavam o item */
+  width: 24px;              /* Define uma largura fixa para a legenda */
+  height: 24px;             /* Define uma altura fixa proporcional */
+  flex-shrink: 0;           /* Impede que o assento deforme ou encolha */
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;     /* Garante o alinhamento vertical perfeito entre assento e texto */
+  justify-content: center;
+  gap: 8px;                /* Espaçamento uniforme entre o assento e o texto */
+  margin: 0 10px;
+}
+
+.showcase {
+  gap: 2px;
+}
+
+.text{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.screen {
+  background-color: #efe6d8;
+  height: 70px;
+  width: 50%;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+.hidden-arrow {
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+
+/*
+
+sessões
+
+*/
+
+.info-painel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-botoes-sessoes {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+/*Snacks pae*/
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 45px auto;
+        }
+
+        .cart-button {
+            border: 0;
+            background: #e3262e;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 7px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .featured {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .combo{
+            border-radius: 20px;
+            height: 250px;
+            width: 250px;
+        }
+
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 17px;
+        }
+
+
+        .product-image {
+          border-radius: 15px;
+            height: 240px;
+            display: grid;
+            place-items: center;
+            background: #e8e8e5;
+            font-size: 55px;
+        }
+
+     
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 15px;
+            min-height: 40px;
+        }
+
+        .product-info p {
+            color: #fafafa;
+            margin: 7px 0 12px;
+            font-weight: bold;
+        }
+
+        .add {
+            width: 100%;
+            padding: 10px;
+            border: 0;
+            background: #202020;
+            color: rgb(201, 196, 196);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add:hover {
+            background: #e3262e;
+        }
+
+        .cart {
+            position: fixed;
+            top: 0;
+            right: -430px;
+            width: min(350px, 92%);
+            height: 100vh;
+            background: rgb(85, 84, 84);
+            box-shadow: -10px 0 30px #0003;
+            z-index: 5;
+            padding: 25px;
+            transition: right .25s;
+        }
+
+        .cart.open {
+            right: 0;
+        }
+
+        .cart h2 {
+            margin-bottom: 20px;
+            color: #801b1b;
+        }
+
+        .close {
+            float: right;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 14px 0;
+            border-bottom: 1px solid #630808;
+        }
+
+        .cart-item small {
+            color: #777;
+        }
+
+        .total {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 950px) {
+            .featured {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        
+      label {
+        display: block;
+        margin-bottom: 14px;
+      }
+      input,
+      select,
+      textarea {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        font: inherit;
+        box-sizing: border-box;
+        color: #202020;
+      }
+      .enviar {
+        width: 100%;
+        padding: 12px;
+        font: inherit;
+        cursor: pointer;
+      }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+
+        <div class="nav">
+            <div>
+                  <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+            <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+
+
+    </header>
+
+    <main>
+        <div class="filtro">
+            <div class="tipo">
+                <button onclick="Cartaz()">Em cartaz</button>
+                <button onclick="Embreve()">Em breve</button>
+            </div>
+            <div class="categoria">
+                <h2>Categorias</h2>
+                
+                <div class="buttons">
+                    <button onclick="Todos()">Todos</button>
+                    <button onclick="Terror()">Terror</button>
+                    <button onclick="Comedia()">Comédia</button>
+                    <button onclick="Fantasia()">Fantasia</button>
+                    <button onclick="Aventura()">Aventura</button>
+                    <button onclick="Ficcao()">Ficção Científica</button>
+                    <button onclick="Drama()">Drama</button>
+                    <button onclick="Suspense()">Suspense</button>
+                    <button onclick="Romance()">Romance</button>
+                    <button onclick="Animacao()">Animação</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="verFilmes">
+            <!-- Em Cartaz -->
+            <figure class="em-cartaz aventura">
+                <a href="./sessao.html?filme=odisseia">
+                    <img src="../images/cartaz/odisseia.jpeg">
+                    <h2>A Odisseia</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz terror">
+                <a href="./sessao.html?filme=resident-evil">
+                    <img src="../images/cartaz/resident-evil.jpeg">
+                    <h2>Resident Evil</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz terror">
+                <a href="./sessao.html?filme=virtuosas">
+                    <img src="../images/cartaz/virtuosas.jpeg">
+                    <h2>Virtuosas</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz drama">
+                <a href="./sessao.html?filme=franz">
+                    <img src="../images/cartaz/franz.jpeg">
+                    <h2>Franz</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz aventura">
+                <a href="./sessao.html?filme=homem-aranha">
+                    <img src="../images/cartaz/homem-aranha-um-novo-dia.jpeg">
+                    <h2>Homem Aranha: Um Novo Dia</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz fantasia">
+                <a href="./sessao.html?filme=arvore-encantada">
+                    <img src="../images/cartaz/a-maravilhosa-arvore-encantada.jpeg">
+                    <h2>A Maravilhosa Árvore Encantada</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz comedia">
+                <a href="./sessao.html?filme=minha-melhor-amiga">
+                    <img src="../images/cartaz/minha-melhor-amiga.jpeg">
+                    <h2>Minha Melhor Amiga</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz suspense">
+                <a href="./sessao.html?filme=no-limite-da-justica">
+                    <img src="../images/cartaz/no-limite-da-justica.jpeg">
+                    <h2>No Limite da Justiça</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz romance drama">
+                <a href="./sessao.html?filme=la-la-land">
+                    <img src="../images/cartaz/la-la-land.jpeg">
+                    <h2>La La Land</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz animacao">
+                <a href="./sessao.html?filme=toy-story-5">
+                    <img src="../images/cartaz/toy-story-5.jpeg">
+                    <h2>Toy Story 5</h2>
+                </a>
+            </figure>
+
+            <figure class="em-cartaz ficcao">
+                <a href="./sessao.html?filme=devoradores-de-estrelas">
+                    <img src="../images/cartaz/devoradores-de-estrelas.jpeg">
+                    <h2>Devoradores de Estrelas</h2>
+                </a>
+            </figure>
+
+            <!-- Em Breve -->
+
+            <figure class="em-breve drama suspense">
+                <a href="./sessao.html?filme=verity">
+                    <img src="../images/cartaz/verity.jpeg">
+                    <h2>Verity</h2>
+                </a>
+            </figure>
+
+            <figure class="em-breve aventura">
+                <a href="./sessao.html?filme=vingadores">
+                    <img src="../images/cartaz/vingadores-doomsday.jpeg">
+                    <h2>Vingadores: Doutor Destino</h2>
+                </a>
+            </figure>
+
+            <figure class="em-breve ficcao">
+                <a href="./sessao.html?filme=duna-3">
+                    <img src="../images/cartaz/duna-parte-3.jpeg">
+                    <h2>Duna: Parte 3</h2>
+                </a>
+            </figure>
+
+            <figure class="em-breve aventura">
+                <a href="./sessao.html?filme=jogos-vorazes">
+                    <img src="../images/cartaz/jogos-vorazes.jpeg">
+                    <h2>Jogos Vorazes</h2>
+                </a>
+            </figure>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="../js/filtro.js"></script>
+</body>
+</html>

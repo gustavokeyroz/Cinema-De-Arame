@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+     <header>
+
+        <div class="nav">
+            <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+            <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+    </header>
+
+           <main class="container">
+
+        <section>
+            <div>
+                <h1>Fure a fila.<br>Compre seus snacks.</h1>
+            </div>
+            <button class="cart-button" id="openCart">
+                CARRINHO 
+            </button>
+        </section>
+
+        <section class="featured">
+            
+         <img class="combo" src="../images/banners/arame-snack-chocolate.png">
+        <img class="combo" src="../images/banners/arame-snack-doces.png" alt="">    
+        <img class="combo" src="../images/banners/arame-snack-lanches.png" alt="">
+        <img class="combo" src="../images/banners/arame-snack-pipoca.png" alt="">
+        <img class="combo" src="../images/banners/arame-snack-refrigerante.png" alt="">
+            
+        </section>
+
+        <h2>Combos</h2>
+
+        <section class="products">
+            <article class="product">
+                <div class="product-image">
+                    <img class="product-image" src="../images/banners/arame-combo-1.png">
+                </div>
+                <div class="product-info">
+                    <h3>Combo 1</h3>
+                    <p>R$ 73,00</p>
+                    <button class="add" data-name="combo 1" data-price="73">
+                        ADICIONAR
+                    </button>
+                </div>
+                
+            </article>
+
+            <article class="product">
+                <div class="product-image">
+                    <img class="product-image" src="../images/banners/arame-combo-2.png">
+                </div>
+                <div class="product-info">
+                    <h3>Combo 2</h3>
+                    <p>R$ 50,50</p>
+                    <button class="add" data-name="Combo 2" data-price="50.5">
+                        ADICIONAR
+                    </button>
+                </div>
+            </article>
+
+            <article class="product">
+                <div class="product-image">
+                    <img class="product-image" src="../images/banners/arame-combo-3.png">
+                </div>
+                <div class="product-info">
+                    <h3>Combo 3</h3>
+                    <p>R$ 53,00</p>
+                    <button class="add" data-name="Combo 3" data-price="53">
+                        ADICIONAR
+                    </button>
+                </div>
+            </article>
+
+            <article class="product">
+                <div class="product-image">
+                      <img class="product-image" src="../images/banners/arame-combo-4.png">
+                </div>
+                <div class="product-info">
+                    <h3>Combo 4</h3>
+                    <p>R$ 52,00</p>
+                    <button class="add" data-name="Combo 4" data-price="52">
+                        ADICIONAR
+                    </button>
+                </div>
+            </article>
+
+            <article class="product">
+                <div class="product-image">
+                      <img class="product-image" src="../images/banners/arame-combo-5.png">
+                </div>
+                <div class="product-info">
+                    <h3>Combo 5</h3>
+                    <p>R$ 44,00</p>
+                    <button class="add" data-name="Combo 5" data-price="44">
+                        ADICIONAR
+                    </button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+        <aside class="cart" id="cart">
+        <button class="close" id="closeCart">×</button>
+        <h2>Seu carrinho</h2>
+
+        <div id="cartItems">
+            <p>Nenhum produto adicionado.</p>
+        </div>
+
+        <div class="total">
+            Total: R$ <span id="total">0,00</span>
+        </div>
+    </aside> 
+
+    <script>
+
+        const botoesAdicionar = document.querySelectorAll(".add");
+        const carrinho = document.getElementById("cart");
+        const itensCarrinho = document.getElementById("cartItems");
+        const total = document.getElementById("total");
+        const cartCount = document.getElementById("cartCount");
+        const openCart = document.getElementById("openCart");
+        const closeCart = document.getElementById("closeCart");
+
+        const produtos = [];
+
+        botoesAdicionar.forEach(function (botao) {
+            botao.addEventListener("click", function () {
+                const nome = botao.dataset.name;
+                const preco = Number(botao.dataset.price);
+
+                produtos.push({
+                    nome: nome,
+                    preco: preco
+                });
+
+                atualizarCarrinho();
+                carrinho.classList.add("open");
+            });
+        });
+
+        function atualizarCarrinho() {
+            itensCarrinho.innerHTML = "";
+
+            if (produtos.length === 0) {
+                itensCarrinho.innerHTML = "<p>Nenhum produto adicionado.</p>";
+            }
+
+            let soma = 0;
+
+            produtos.forEach(function (produto) {
+                const item = document.createElement("div");
+                item.className = "cart-item";
+
+                item.innerHTML =
+                    "<div><strong>" + produto.nome + "</strong>" +
+                    "<br><small>Produto adicionado</small></div>" +
+                    "<strong>R$ " + produto.preco.toFixed(2).replace(".", ",") + "</strong>";
+
+                itensCarrinho.appendChild(item);
+                soma += produto.preco;
+            });
+
+            total.textContent = soma.toFixed(2).replace(".", ",");
+            cartCount.textContent = produtos.length;
+        }
+
+        openCart.addEventListener("click", function () {
+            carrinho.classList.add("open");
+        });
+
+        closeCart.addEventListener("click", function () {
+            carrinho.classList.remove("open");
+        });
+    </script>
+</body>
+</html>

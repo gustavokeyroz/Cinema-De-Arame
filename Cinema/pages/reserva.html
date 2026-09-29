@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <header>
+
+        <div class="nav">
+            <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+            <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+    </header>
+
+    <main>
+          <div class="info-sessao-selecionada">
+              <!-- Imagem e Título do Filme -->
+              <img id="filme-img" src="" alt="Cartaz do filme">
+              <h1 id="filme-titulo">Carregando...</h1>
+              <!-- Detalhes do Dia e Horário -->
+              <p id="filme-descricao"></p>
+          </div>
+
+
+          <form id="form">
+      <h2>Reservar sessão</h2>
+
+      <label>
+        Nome completo
+        <input name="nome" required />
+      </label>
+
+      <label>
+        E-mail
+        <input name="email" type="email" required />
+      </label>
+
+      <label>
+        WhatsApp
+        <input name="tel" type="tel" required />
+      </label>
+
+      <label>
+        Data
+        <input name="data" type="date" required />
+      </label>
+
+      <label>
+        Sessão
+        <select name="sessao" required>
+          <option>Escolha um horário</option>
+          <option>17h</option>
+          <option>19h</option>
+          <option>21h</option>
+        </select>
+      </label>
+
+      <label>
+        Ingressos
+        <input name="qtd" type="number" min="1" max="6" value="2" required />
+      </label>
+
+      <label>
+        Observações (opcional)
+        <textarea name="obs"></textarea>
+      </label>
+
+      <button class="enviar" type="submit">Reservar</button>
+    </form>
+
+    <div id="ok" hidden>
+      <h2>Reserva feita</h2>
+      <p id="msg"></p>
+      <p>Código da reserva: <strong id="codigo"></strong></p>
+    </div>
+    </main>
+    
+
+    <script>
+      var form = document.getElementById("form");
+      var ok = document.getElementById("ok");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var codigo = "CA-" + Math.random().toString(36).slice(2, 7).toUpperCase();
+        document.getElementById("msg").textContent =
+          form.nome.value + ", " + form.qtd.value + " ingresso(s) para " +
+          form.data.value.split("-").reverse().join("/") + " às " + form.sessao.value + ".";
+        document.getElementById("codigo").textContent = codigo;
+        form.hidden = true;
+        ok.hidden = false;
+      });
+    </script>
+
+    <script src="../js/filmes.js"></script>
+  </body>
+</html>

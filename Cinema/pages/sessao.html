@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema de Arame</title>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+    <header>
+
+        <div class="nav">
+            <div>
+                <a href="../index.html">
+                  <img src="../images/logo.jpeg" class="logo" >
+                </a>
+            </div>
+
+            <a href="../index.html" class="link-nav">Home</a>
+            <a href="./filmes.html" class="link-nav">Filmes</a>
+            <a href="./snacks.html" class="link-nav">Snacks</a>
+        </div>
+    </header>
+
+    <main>
+      <div class="container-sections" id="container-sections">
+        <section>
+          <div class="info-painel">
+              <!-- Imagem e Título do Filme -->
+              <img id="filme-img" src="" alt="Cartaz do filme">
+              <h1 id="filme-titulo">Carregando...</h1>
+              <!-- Detalhes do Dia e Horário -->
+              <p id="filme-descricao"></p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+     <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>Ocupado</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Selecionado</small>
+      </li>
+    </ul>
+
+
+    <div class="container-seat">
+      <div class="screen"></div>
+
+      <div id="cinema-seats" class="cinema-seats">
+      </div>
+
+      <div class="text">
+        <h3>Você selecionou <span id="count">0</span> assentos.</h3>
+        <h3>Preço: R$ <span id="price">0</span></h3>
+      </div>
+    </div>
+
+    <script src="../js/assentos.js"></script>
+    <script src="../js/filmes.js"></script>
+  </body>
+</html>
